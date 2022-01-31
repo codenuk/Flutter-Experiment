@@ -38,33 +38,13 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: const Text('App Bar'),
       ),
-      body: Center(
-        // child: Text(
-        //   'hello home',
-        //   style: TextStyle(
-        //     fontSize: 30,
-        //     color: Colors.blue
-        //   ),
-        // ),
-        // child: Image(
-        //     image: NetworkImage(
-        //         "https://i.picsum.photos/id/202/200/300.jpg?hmac=KWOdj8XRnO9x8h_I9rIbscSAhD1x-TwkSPPYjWLN2sI")),
-        child: ListView(
-          children: getData(20),
-        ),
-      ),
+      body: ListView.builder(
+          itemCount: 15,
+          itemBuilder: (BuildContext context, int index) {
+            return ListTile(
+              title: Text("เมนูที่ ${index + 1}"),
+            );
+          }),
     );
-  }
-
-  List<Widget> getData(int count) {
-    List<Widget> data = [];
-    for (var i = 0; i < count; i++) {
-      var menu = ListTile(
-        title: Text("เมนูที่ ${i + 1}", style: TextStyle(fontSize: 25)),
-        subtitle: Text('หัวข้อย่อที ${i + 1}', style: TextStyle(fontSize: 18)),
-      );
-      data.add(menu);
-    }
-    return data;
   }
 }
