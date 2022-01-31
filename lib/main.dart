@@ -61,15 +61,16 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => {
-          setState(() => {
-            number = number + 1,
-            print('Click')
-          })
-        },
+        onPressed: addNumber,
         // child: Text("เพิ่ม"),
         child: Icon(Icons.add),
       ),
     );
+  }
+
+  void addNumber() {
+    setState(() {
+      number = number + 1;
+    });
   }
 }
