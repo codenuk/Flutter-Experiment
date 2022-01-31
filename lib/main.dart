@@ -34,6 +34,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> data = [];
+    for(var i = 0; i<10; i++) {
+      data.add(Text('รายการที่ $i'));
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('App Bar'),
@@ -50,14 +55,8 @@ class _MyHomePageState extends State<MyHomePage> {
         //     image: NetworkImage(
         //         "https://i.picsum.photos/id/202/200/300.jpg?hmac=KWOdj8XRnO9x8h_I9rIbscSAhD1x-TwkSPPYjWLN2sI")),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('กดปุ่มเพื่อเพิ่มจำนวนตัวเลข'),
-            Text(
-              '$number',
-              style: TextStyle(fontSize: 60),
-            ),
-          ],
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: data,
         ),
       ),
       floatingActionButton: FloatingActionButton(
