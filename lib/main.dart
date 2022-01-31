@@ -1,65 +1,75 @@
+// ignore_for_file: prefer_const_constructors, avoid_print, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
-import 'package:english_words/english_words.dart';
 
 void main() {
+  print("hello");
   runApp(const MyApp());
 }
 
+// StatelessWidget -> ไม่สามารถเปลี่ยนแปลงค่าได้
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    final wordPair = WordPair.random();
     return MaterialApp(
-      title: 'Welcome to Flutter 1',
-      home: RandomWords(),
+      title: 'hello',
+      home: MyHomePage(),
+      theme: ThemeData(primarySwatch: Colors.green),
     );
   }
 }
 
-class RandomWords extends StatefulWidget {
+// StatefulWidget -> สามารถเปลี่ยนแปลงค่า state ได้ จะมีการ setState
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key}) : super(key: key);
+
   @override
-  _RandomWordsState createState() => _RandomWordsState();
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _RandomWordsState extends State<RandomWords> {
-  final _suggestions = <WordPair>[];
-  final _biggerFont = TextStyle(fontSize: 18.0);
+class _MyHomePageState extends State<MyHomePage> {
+  int number = 0; // สร้าง state
 
   @override
   Widget build(BuildContext context) {
-    final wordPair = WordPair.random();
     return Scaffold(
       appBar: AppBar(
-        title: Text('startup name generator'),
+        title: const Text('App Bar'),
       ),
-      body: _buildSuggestions(),
+      body: Center(
+        // child: Text(
+        //   'hello home',
+        //   style: TextStyle(
+        //     fontSize: 30,
+        //     color: Colors.blue
+        //   ),
+        // ),
+        // child: Image(
+        //     image: NetworkImage(
+        //         "https://i.picsum.photos/id/202/200/300.jpg?hmac=KWOdj8XRnO9x8h_I9rIbscSAhD1x-TwkSPPYjWLN2sI")),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('กดปุ่มเพื่อเพิ่มจำนวนตัวเลข'),
+            Text(
+              '$number',
+              style: TextStyle(fontSize: 60),
+            ),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => {
+          setState(() => {
+            number = number + 1,
+            print('Click')
+          })
+        },
+        // child: Text("เพิ่ม"),
+        child: Icon(Icons.add),
+      ),
     );
-  }
-
-  Widget _buildSuggestions() {
-    return ListView.builder(
-      padding: EdgeInsets.all(16.0),
-      itemBuilder: (context, i) {
-        if (i.isOdd) return Divider();
-
-        final index = i ~/ 2;
-        if (index >= _suggestions.length) {
-          _suggestions.addAll(generateWordPairs().take(10));
-        }
-
-        return _buildRow(_suggestions[index]);
-      },
-    );
-  }
-
-  Widget _buildRow(WordPair pair) {
-    return ListTile(
-        title: Text(
-        pair.asPascalCase,
-        style: _biggerFont,
-    ));
   }
 }
