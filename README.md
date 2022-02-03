@@ -1,16 +1,77 @@
-# flutter_application
-
-A new Flutter project.
+# Flutter-Experiment
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+## Installation
 
-A few resources to get you started if this is your first Flutter project:
+First time, setup project for development on Mac.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+1. Download Flutter SDK
+2. Open iTerm
+```bash
+open ~/.zshrc
+```
+3. Add code in find .zshrc -> and remove pwd to /Users/supagornsirimaleewattana
+```bash 
+export PATH="$PATH:/Users/supagornsirimaleewattana/flutter/bin"
+```
+4. Run flutter doctor
+```bash
+flutter doctor
+```
+5. Finish
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Set up the IOS simulator
+- open iTerm
+```bash
+open -a Simulator
+```
+
+## Create and run a simple Flutter app
+1. Create a new Flutter app
+```bash
+flutter create my_app
+```
+2. Enter this directory
+```bash
+cd my_app
+```
+3. To launch the app
+```bash
+flutter run
+```
+- Or Run in by VS Code 
+1. Click Run
+2. Click Start Debugging 
+
+## Install the Flutter and Dart plugins in VS Code
+1. Start VS Code.
+2. Invoke View > Command Palette….
+3. Type “install”, and select Extensions: Install Extensions.
+4. Type “flutter” in the extensions search field, select Flutter in the list, and click Install. This also installs the required Dart plugin.
+
+
+[Reference](https://docs.flutter.dev/get-started/install/macos)
+
+# Knowledge
+
+## Best Folder Structure
+- hooks/
+- assets/
+- components/
+- i18n/
+- navigation/
+- pages/
+- store/
+- utils/
+- theme/
+
+<hr />
+
+[Ref-Youtube](https://www.youtube.com/watch?v=3jGj-1-m_zA)
+<br />
+
+[Doc](https://drive.google.com/file/d/1LdM8y8G8KOATq03vDsXvHaTCzJ8oCfTz/view)
+
+
+<!-- https://app.quicktype.io -->
