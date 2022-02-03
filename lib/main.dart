@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'MoneyBox.dart';
 
 void main() {
-  print("hello");
   runApp(const MyApp());
 }
 
@@ -30,8 +29,18 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int number = 0;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    print("start initState");
+  }
+
   @override
   Widget build(BuildContext context) {
+    print("start build");
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -43,32 +52,21 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            MoneyBox(
-              title: 'ยอดเงินคงเหลือ',
-              amount: 10000,
-              color: Colors.lightBlue,
-              size: 100,
-            ),
-            SizedBox(height: 5,),
-            MoneyBox(
-              title: 'รายรับ',
-              amount: 15000,
-              color: Colors.green,
-              size: 100,
-            ),
-            SizedBox(height: 5,),
-            MoneyBox(
-              title: 'รายจ่าย',
-              amount: 5000,
-              color: Colors.red,
-              size: 100,
-            )
-          ],
-        ),
+      body: Column(
+        children: [
+          Text(
+            "ข้อความ ${number.toString()}",
+            style: TextStyle(fontSize: 30),
+          )
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            number++;
+          });
+        },
+        child: Icon(Icons.add),
       ),
     );
   }
