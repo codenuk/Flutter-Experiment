@@ -68,7 +68,7 @@ flutter:
         - asset: assets/dancing_script.ttf
 ```
 <br />
-[Reference Youtube](https://suragch.medium.com/how-to-use-a-custom-font-in-a-flutter-app-911763c162f5)
+[Reference](https://suragch.medium.com/how-to-use-a-custom-font-in-a-flutter-app-911763c162f5)
 
 <hr />
 
