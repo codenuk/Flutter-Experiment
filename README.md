@@ -55,16 +55,20 @@ flutter run
 
 # Knowledge
 
-## Best Folder Structure
-- hooks/
-- assets/
-- components/
-- i18n/
-- navigation/
-- pages/
-- store/
-- utils/
-- theme/
+## How to use a custom font in a Flutter app
+1. Add a font to your project
+  - in assets/fonts/
+2. Register the font
+  - Open your pubspec.yaml file.
+``` bash 
+flutter:
+  fonts:
+    - family: DancingScript     
+      fonts:
+        - asset: assets/dancing_script.ttf
+```
+<br />
+[Reference Youtube](https://suragch.medium.com/how-to-use-a-custom-font-in-a-flutter-app-911763c162f5)
 
 <hr />
 
