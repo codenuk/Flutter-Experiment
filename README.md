@@ -72,6 +72,16 @@ flutter:
 
 <hr />
 
+## How do I use hexadecimal color strings in Flutter
+- we only need to convert the string #b74093 to an integer value
+``` bash
+const color = const Color(0xFFB74093);
+```
+<br />
+[Reference](https://stackoverflow.com/a/50081214/17992107)
+
+<hr />
+
 [Reference Youtube](https://www.youtube.com/watch?v=3jGj-1-m_zA)
 <br />
 
