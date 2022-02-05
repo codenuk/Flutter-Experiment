@@ -1,13 +1,27 @@
-// ignore_for_file: prefer_const_constructors, avoid_print, prefer_const_literals_to_create_immutables
+// ignore_for_file: unnecessary_const
+
 import 'package:flutter/material.dart';
-import 'MoneyBox.dart';
+
+const MaterialColor white = const MaterialColor(
+  0xFFFFFFFF,
+  const <int, Color>{
+    50: const Color(0xFFFFFFFF),
+    100: const Color(0xFFFFFFFF),
+    200: const Color(0xFFFFFFFF),
+    300: const Color(0xFFFFFFFF),
+    400: const Color(0xFFFFFFFF),
+    500: const Color(0xFFFFFFFF),
+    600: const Color(0xFFFFFFFF),
+    700: const Color(0xFFFFFFFF),
+    800: const Color(0xFFFFFFFF),
+    900: const Color(0xFFFFFFFF),
+  },
+);
 
 void main() {
-  print("hello");
   runApp(const MyApp());
 }
 
-// StatelessWidget -> ไม่สามารถเปลี่ยนแปลงค่าได้
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -15,61 +29,82 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'hello',
-      home: MyHomePage(),
-      theme: ThemeData(primarySwatch: Colors.purple),
+      debugShowCheckedModeBanner: false,
+      home: const SearchLotteryPage(),
+      theme: ThemeData(
+        primarySwatch: white,
+        // primarySwatch: Colors.red,
+        scaffoldBackgroundColor: Colors.white,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
     );
   }
 }
 
-// StatefulWidget -> สามารถเปลี่ยนแปลงค่า state ได้ จะมีการ setState
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+class SearchLotteryPage extends StatefulWidget {
+  const SearchLotteryPage({Key? key}) : super(key: key);
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _SearchLotteryPageState createState() => _SearchLotteryPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _SearchLotteryPageState extends State<SearchLotteryPage>
+    with TickerProviderStateMixin {
+  late TabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 3, vsync: this, initialIndex: 1);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'บัญชีของฉัน',
-          style: TextStyle(
-            fontSize: 25,
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
+        toolbarHeight: 0, // Remove Distance Text Title
+        elevation: 0, // Remove Box Shadow
+        bottom: TabBar(
+          controller: _tabController,
+          indicatorColor: const Color(0xFFFFFFFF),
+          labelColor: const Color(0xFFDC49BC),
+          labelStyle: const TextStyle(
+            fontSize: 18,
+            fontFamily: 'Kanit-Bold',
           ),
-        ),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            MoneyBox(
-              title: 'ยอดเงินคงเหลือ',
-              amount: 10000,
-              color: Colors.lightBlue,
-              size: 100,
+          unselectedLabelColor: const Color(0xFF000000),
+          unselectedLabelStyle: const TextStyle(
+            fontSize: 16,
+            fontFamily: 'Kanit-Regular',
+          ),
+          tabs: const <Widget>[
+            Tab(
+              text: "ข้อมูลผู้ขาย",
             ),
-            SizedBox(height: 5,),
-            MoneyBox(
-              title: 'รายรับ',
-              amount: 15000,
-              color: Colors.green,
-              size: 100,
+            Tab(
+              text: "LOTTEE",
             ),
-            SizedBox(height: 5,),
-            MoneyBox(
-              title: 'รายจ่าย',
-              amount: 5000,
-              color: Colors.red,
-              size: 100,
-            )
+            Tab(
+              text: "เข้าสู่ระบบ",
+            ),
           ],
         ),
+      ),
+      body: TabBarView(
+        controller: _tabController,
+        children: const <Widget>[
+          Center(
+            child: Text("It's cloudy here"),
+          ),
+          Center(
+            child: Text("It's rainy here"),
+          ),
+          Center(
+            child: Text("It's sunny here"),
+          ),
+        ],
       ),
     );
   }
 }
+
