@@ -33,7 +33,6 @@ class MyApp extends StatelessWidget {
       home: const SearchLotteryPage(),
       theme: ThemeData(
         primarySwatch: white,
-        // primarySwatch: Colors.red,
         scaffoldBackgroundColor: Colors.white,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
@@ -93,18 +92,27 @@ class _SearchLotteryPageState extends State<SearchLotteryPage>
       body: TabBarView(
         controller: _tabController,
         children: const <Widget>[
-          Center(
-            child: Text("It's cloudy here"),
-          ),
-          Center(
-            child: Text("It's rainy here"),
-          ),
-          Center(
-            child: Text("It's sunny here"),
-          ),
+          Text("It's could here"),
+          TabMain(),
+          Text("It's sunny here"),
         ],
       ),
     );
   }
 }
 
+class TabMain extends StatelessWidget {
+  const TabMain({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        children: [
+          Image.asset('assets/images/banner.png'),
+        ],
+      ),
+    );
+  }
+}
