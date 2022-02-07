@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   english_words: ^4.0.0
   intl: ^0.17.0
+  pinput: ^1.2.2
 
 dev_dependencies:
   flutter_test:
@@ -80,7 +81,7 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Kanit-Regelar     
+    - family: Kanit-Regular     
       fonts:
         - asset: assets/fonts/Kanit-Regular.ttf
     - family: Kanit-Bold     
