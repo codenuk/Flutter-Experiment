@@ -82,7 +82,7 @@ const color = const Color(0xFFB74093);
 
 <hr />
 
-## Flutter File Structure for Large Projects
+## File Structure for Large Projects
 1. Folder assets ->  Contains Folder images, icons, logos, fonts
 2. Folder fucntions -> cloud function (API)
 3. Folder lib 
@@ -95,6 +95,25 @@ const color = const Color(0xFFB74093);
   - 3.7. File theme.dart -> Contains Styles
 <br />
 [Reference](https://www.youtube.com/watch?v=FsK1H6KXf0c)
+
+<hr />
+
+## Navigate with named routes
+```code
+MaterialApp(
+  title: 'Named Routes Demo',
+  // Start the app with the "/" named route. In this case, the app starts
+  // on the FirstScreen widget.
+  initialRoute: '/',
+  routes: {
+    // When navigating to the "/" route, build the FirstScreen widget.
+    '/': (context) => const FirstScreen(),
+    // When navigating to the "/second" route, build the SecondScreen widget.
+    '/second': (context) => const SecondScreen(),
+  },
+)
+```
+[Reference](https://docs.flutter.dev/cookbook/navigation/named-routes)
 
 <hr />
 
