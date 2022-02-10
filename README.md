@@ -84,7 +84,7 @@ const color = const Color(0xFFB74093);
 
 ## Flutter File Structure for Large Projects
 1. Folder assets ->  Contains Folder images, icons, logos, fonts
-2. Folder fucntion -> cloud function (API)
+2. Folder fucntions -> cloud function (API)
 3. Folder lib 
   - 3.1. Folder modals -> Contains collection data
   - 3.2. Folder screens -> Contains many screen
