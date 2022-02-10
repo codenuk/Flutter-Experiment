@@ -92,7 +92,7 @@ const color = const Color(0xFFB74093);
   - 4.3. Folder services -> Contains firebase
   - 4.4. Folder utils -> Contains Function
   - 4.5. Folder widgets -> Contains widget for reuse widget
-  - 4.6. File main.dart -> Navigation
+  - 4.6. File app.dart -> Navigation
 <br />
 [Reference](https://www.youtube.com/watch?v=FsK1H6KXf0c)
 
