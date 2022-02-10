@@ -92,6 +92,7 @@ const color = const Color(0xFFB74093);
   - 3.4. Folder utils -> Contains Function
   - 3.5. Folder widgets -> Contains widget for reuse widget
   - 3.6. File app.dart -> Navigation
+  - 3.7. File theme.dart -> Contains Styles
 <br />
 [Reference](https://www.youtube.com/watch?v=FsK1H6KXf0c)
 
