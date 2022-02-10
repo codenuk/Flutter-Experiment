@@ -83,16 +83,15 @@ const color = const Color(0xFFB74093);
 <hr />
 
 ## Flutter File Structure for Large Projects
-1. Folder assets ->  Contains Folder images, icons, logos
-2. Folder fonts -> Contains Font
-3. Folder fucntion -> cloud function (API)
-4. Folder lib 
-  - 4.1. Folder modals -> Contains collection data
-  - 4.2. Folder screens -> Contains many screen
-  - 4.3. Folder services -> Contains firebase
-  - 4.4. Folder utils -> Contains Function
-  - 4.5. Folder widgets -> Contains widget for reuse widget
-  - 4.6. File app.dart -> Navigation
+1. Folder assets ->  Contains Folder images, icons, logos, fonts
+2. Folder fucntion -> cloud function (API)
+3. Folder lib 
+  - 3.1. Folder modals -> Contains collection data
+  - 3.2. Folder screens -> Contains many screen
+  - 3.3. Folder services -> Contains firebase
+  - 3.4. Folder utils -> Contains Function
+  - 3.5. Folder widgets -> Contains widget for reuse widget
+  - 3.6. File app.dart -> Navigation
 <br />
 [Reference](https://www.youtube.com/watch?v=FsK1H6KXf0c)
 
