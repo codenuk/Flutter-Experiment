@@ -1,5 +1,6 @@
+// ignore_for_file: unnecessary_const
+
 import 'package:flutter/material.dart';
-import './app.dart';
 
 const MaterialColor white = const MaterialColor(
   0xFFFFFFFF,
@@ -16,7 +17,3 @@ const MaterialColor white = const MaterialColor(
     900: const Color(0xFFFFFFFF),
   },
 );
-
-void main() {
-  runApp(const MyApp());
-}
