@@ -87,7 +87,7 @@ const color = const Color(0xFFB74093);
 2. Folder fucntions -> cloud function (API)
 3. Folder lib 
   - 3.1. Folder modals -> Contains collection data
-  - 3.2. Folder screens -> Contains many screen
+  - 3.2. Folder pages -> Contains many screen
   - 3.3. Folder services -> Contains firebase
   - 3.4. Folder utils -> Contains Function
   - 3.5. Folder widgets -> Contains widget for reuse widget
